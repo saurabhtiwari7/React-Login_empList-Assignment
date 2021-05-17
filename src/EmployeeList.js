@@ -1,8 +1,11 @@
 import React from 'react';
-import EmpData from './DashboardPage.json';
+// import EmpData from './DashboardPage.json';
 import './App.css';
+import {connect} from 'react-redux'
 function EmployeeList(props) {
+// console.log('jhvhjv', props.empList1)
 
+const newDataList = props.empList1;
     return (
         <div>
            <h1>Employee List</h1>
@@ -19,7 +22,7 @@ function EmployeeList(props) {
                </tr>
                </thead>
                <tbody>
-           {EmpData.map((empList, index) => {
+           {newDataList.map((empList, index) => {
                return <>
               
              
@@ -40,4 +43,14 @@ function EmployeeList(props) {
     )
 }
 
-export default EmployeeList
+const mapStateToProps = (state) => {
+return {
+
+    empList1: state.map((data1) => {
+        return data1
+    })
+   
+}
+}
+
+export default connect(mapStateToProps)(EmployeeList)

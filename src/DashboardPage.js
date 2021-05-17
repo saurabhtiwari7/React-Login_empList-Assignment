@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeList from './EmployeeList'
+// import EmployeeList from './EmployeeList'
 
 function DashboardPage() {
     return (
